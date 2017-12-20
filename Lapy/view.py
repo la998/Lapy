@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 
 def hello(request):
-    context = {'hello': 'Hello World!'}
+    context = {'hello': 'Hello World xiaodidi!'}
     return render(request, 'hello.html', context)
 
 
