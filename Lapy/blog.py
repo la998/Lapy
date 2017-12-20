@@ -20,3 +20,16 @@ def get_blog(request):
         response1 += b.title + "<br>"
     response = response1
     return HttpResponse("<p>" + response + "</p>")
+
+
+def update_blog(request):
+    blog = Blog.objects.get(id=1)
+    blog.title = "test update"
+    blog.save()
+
+    return HttpResponse("<p>修改成功</p>")
+
+
+def delete_blog(request):
+    Blog.objects.filter(id=3).delete()
+    return HttpResponse("<p>删除成功</p>")

@@ -23,5 +23,6 @@ urlpatterns = [
     url(r'^hello$', view.hello),
     url(r'^save$', blog.save_blog),
     url(r'^get$', blog.get_blog),
-
+    url(r'^update$', blog.update_blog),
+    url(r'^delete$', blog.delete_blog)
 ]
