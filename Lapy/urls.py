@@ -22,5 +22,6 @@ urlpatterns = [
     path('index/', view.index, name='index'),
     url(r'^hello$', view.hello),
     url(r'^save$', blog.save_blog),
+    url(r'^get$', blog.get_blog),
 
 ]
