@@ -1,2 +1,2 @@
 # Lapy
-> 学习python，边学边写
+> 基于Django 开发的一个站点，用于学习python
