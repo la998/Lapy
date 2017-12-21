@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import *
-from . import view, blog
+from . import view, blog, search
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', view.index, name='index'),
@@ -24,5 +24,8 @@ urlpatterns = [
     url(r'^save$', blog.save_blog),
     url(r'^get$', blog.get_blog),
     url(r'^update$', blog.update_blog),
-    url(r'^delete$', blog.delete_blog)
+    url(r'^delete$', blog.delete_blog),
+    url(r'^search_form$', search.search_form),
+    url(r'^search$', search.search),
+    url(r'^search_post$', search.search_post)
 ]
