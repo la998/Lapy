@@ -6,8 +6,16 @@ from WebModel.models import Blog, Contact, Tag
 
 
 class ContactAdmin(admin.ModelAdmin):
-    fields = ('name', 'email')
-
+    fieldsets = (['Main', {
+            'fields': ('name', 'email'),
+     }],
+        ['Advance', {
+            'classes': ('collapse', ),  # css
+            'fields': ('age', ),
+        }
+        ]
+    )
+    # fields = ('name', 'email')
 
 admin.site.register(Contact, ContactAdmin)
 admin.site.register([Blog, Tag])
