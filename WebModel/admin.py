@@ -5,7 +5,12 @@ from WebModel.models import Blog, Contact, Tag
 # Register your models here.
 
 
+class TagInline(admin.TabularInline):
+    model = Tag
+
+
 class ContactAdmin(admin.ModelAdmin):
+    inlines = [TagInline]  # Inline show
     fieldsets = (['Main', {
             'fields': ('name', 'email'),
      }],
@@ -15,9 +20,9 @@ class ContactAdmin(admin.ModelAdmin):
         }
         ]
     )
-    # fields = ('name', 'email')
+
 
 admin.site.register(Contact, ContactAdmin)
-admin.site.register([Blog, Tag])
+admin.site.register([Blog])
 
 
